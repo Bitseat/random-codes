@@ -5,8 +5,6 @@ import re
 import linecache
 import collections
 
-
-
 def positions(varArray):
 	unique_entries = set(varArray)
 	#i = 1
@@ -33,11 +31,8 @@ def secpositions(secvarArray):
 	#print secfirstarr
 	return secfirstarr
 
-
-
-
-j = 716
-while j == 716:
+j = 1
+while j == 1169:
 	i = 0
 	countsec = 0
 	countfirst = 0
