@@ -6,20 +6,20 @@ import linecache
 j=1
 while j<=1169:
 
-        fileToSearch  = "/home/bitseat/Desktop/new-experiment/concentrate/ugh/test/new2/newfile"+str(j)+".scm"
+        fileToSearch  = "newfile"+str(j)+".scm"
 
         someFile = open( fileToSearch, 'r+' )
-        tempFile = open ("/home/bitseat/Desktop/new-experiment/concentrate/ugh/test/preprocessed/bit1.txt", 'w')
-        newFile = open ("/home/bitseat/Desktop/new-experiment/concentrate/ugh/test/preprocessed/replaceResult"+str(j)+".scm", 'w')
+        tempFile = open ("bit1.txt", 'w')
+        newFile = open ("replaceResult"+str(j)+".scm", 'w')
 
 
         pattern = r'"([A-Za-z0-9_\./\\-]*)"'
          
-        tempFile.writelines([l for l in open("/home/bitseat/Desktop/new-experiment/concentrate/ugh/test/new2/newfile"+str(j)+".scm").readlines()])     
+        tempFile.writelines([l for l in open("newfile"+str(j)+".scm").readlines()])     
         print "made bit"
         tempFile.close()
 
-        tempFile = open ("/home/bitseat/Desktop/new-experiment/concentrate/ugh/test/preprocessed/bit1.txt", 'r+')
+        tempFile = open ("bit1.txt", 'r+')
 
         def findReplacment1 (org_string):
             #find a subsetLink that has a conceptNode with org_string, go lower into its EvaluationLink and find the predicateNode
@@ -27,7 +27,7 @@ while j<=1169:
             inSatisfyingScope = False
             inEvalListLink = False
             isEqual = False
-            tempFile = open ("/home/bitseat/Desktop/new-experiment/concentrate/ugh/test/preprocessed/bit1.txt", 'r+')
+            tempFile = open ("bit1.txt", 'r+')
                 
             for line in tempFile:
                  if "SubsetLink" or "IntensionalInheritanceLink" in line:
@@ -70,7 +70,7 @@ while j<=1169:
             inSatisfyingScope = False
             inEvalListLink = False
             isEqual = False
-            tempFile = open ("/home/bitseat/Desktop/new-experiment/concentrate/ugh/test/preprocessed/bit1.txt", 'r+')
+            tempFile = open ("bit1.txt", 'r+')
             print valset + "  and  " + val
                 
             for line in tempFile:
@@ -188,5 +188,5 @@ while j<=1169:
               
         someFile.close()          
         newFile.close()  
-        os.remove('/home/bitseat/Desktop/new-experiment/concentrate/ugh/test/preprocessed/bit1.txt')
+        os.remove('bit1.txt')
         j+=1
